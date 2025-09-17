@@ -1,42 +1,220 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="css.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>musical instruments</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Instrumentos — Grades</title>
+<style>
+  :root{
+    --bg:#f8e9dc;
+    --accent:#f32808;
+    --card:#f7d9a8;
+    --muted:#0f0901;
+    --shadow: 0 6px 18px rgba(0,0,0,0.08);
+    --radius:12px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg,var(--bg) 0%, #fff6f0 100%);
+    color:var(--muted);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  header{
+    background:var(--accent);
+    color:white;
+    padding:18px 24px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  }
+  header h1{
+    margin:0;
+    font-size:20px;
+    letter-spacing:0.4px;
+  }
+
+  main{
+    max-width:1100px;
+    margin:28px auto;
+    padding:0 18px 48px;
+  }
+
+  /* GRID: 4 col desktop, 2 tablet, 1 mobile */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:20px;
+  }
+
+  /* responsividade */
+  @media (max-width:1000px){
+    .grid{grid-template-columns: repeat(2, 1fr);}
+  }
+  @media (max-width:600px){
+    .grid{grid-template-columns: 1fr;}
+  }
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
+    border-radius:var(--radius);
+    padding:16px;
+    box-shadow:var(--shadow);
+    min-height:320px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    transition:transform .18s ease, box-shadow .18s ease;
+    border:1px solid rgba(0,0,0,0.03);
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.12);
+  }
+
+  .card .media{
+    height:160px;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--card);
+    margin-bottom:12px;
+  }
+  .card .media img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    display:block;
+  }
+
+  .card h3{
+    margin:0 0 6px;
+    font-size:18px;
+    color:#3b2f2a;
+  }
+
+  .card p{
+    margin:0 0 12px;
+    line-height:1.35;
+    color:#4a3f38;
+    font-size:14px;
+    flex-grow:1;
+  }
+
+  .price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-top:10px;
+  }
+
+  .price{
+    font-weight:700;
+    font-size:18px;
+    color:var(--accent);
+    background:rgba(255,127,107,0.08);
+    padding:8px 12px;
+    border-radius:8px;
+  }
+
+  .btn{
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(255,127,107,0.18);
+    font-weight:600;
+    transition:opacity .12s ease, transform .12s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn:hover{opacity:0.95}
+
+  /* rótulos pequenos */
+  .tag{
+    font-size:12px;
+    color:#7a6a59;
+    background:rgba(0,0,0,0.03);
+    padding:6px 8px;
+    border-radius:8px;
+  }
+</style>
 </head>
 <body>
-    <div>
-        <header>
-            <ul>
-             <li>🎹home</li>
-             <li>🎺varieties</li>
-             <li>🎸news</li>
-             <li>🎻about us</li>
+  <header>
+    <h1>sons e melodias 🎸🎹</h1>
+    <div style="margin-left:auto" class="tag">Exemplo</div>
+  </header>
 
-            </ul>
-        </header>
-        <h1>musical instuments are very important for mental health.</h1>
+  <main>
+    <section class="grid" aria-label="Lista de instrumentos">
+      <!-- 1 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://via.placeholder.com/300x160?text=Guitarra" alt="Guitarra acustica">
+        </div>
+        <h3>Guitarra Acústica</h3>
+        <p>Guitarra de corda aço, timbre quente e corpo resistente — ideal para iniciantes e apresentações acústicas.</p>
+        <div class="price-row">
+          <div class="price">R$ 799,00</div>
+          <button class="btn">Comprar</button>
+        </div>
+      </article>
 
+      <!-- 2 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://via.placeholder.com/300x160?text=Violino" alt="Violino">
+        </div>
+        <h3>Violino Estudante</h3>
+        <p>Violino 4/4 com acabamento em madeira, ótimo para estudos e orquestras escolares. Acompanha arco e estojo.</p>
+        <div class="price-row">
+          <div class="price">R$ 1.250,00</div>
+          <button class="btn">Comprar</button>
+        </div>
+      </article>
 
-        <a href="https://google.com">
-      
+      <!-- 3 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://via.placeholder.com/300x160?text=Piano+Digital" alt="Piano digital">
+        </div>
+        <h3>Piano Digital</h3>
+        <p>Teclado com 88 teclas, som realista e funções de aprendizagem. Perfeito para aulas, estúdio pequeno e prática em casa.</p>
+        <div class="price-row">
+          <div class="price">R$ 2.990,00</div>
+          <button class="btn">Comprar</button>
+        </div>
+      </article>
 
-        <img src="https://queroumclarone.com.br/wp-content/uploads/2021/01/aplique-instrumentos-musicais-bateria-1024x773.jpg" alt="guitar" width="990" height="500";>
-
-    </a>
-    <footer>
-        <h1>copyright 2025.</h1>
-
-    </footer> 
-    </div>
-
-  
-     
-</body> 
-
+      <!-- 4 -->
+      <article class="card">
+        <div class="media">
+          <img src="https://via.placeholder.com/300x160?text=Bateria" alt="Bateria acustica">
+        </div>
+        <h3>Bateria Acústica Compacta</h3>
+        <p>Kit compacto com bumbo, caixa, toms e pratos — ideal para quem precisa de um set com bom custo-benefício.</p>
+        <div class="price-row">
+          <div class="price">R$ 1.890,00</div>
+          <button class="btn">Comprar</button>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
+  <footer style="background: #f32808; color: white; text-align: center; padding: 16px; font-size: 14px;">
+    <p><strong>Sobre nós</strong> | Instagram: <a href="https://instagram.com/sons_melodias" target="_blank" style="color: white; text-decoration: underline;">@sons_melodias</a> | Número: +55 (81) 99274-7360</p>
+  </footer>
+
 
 
 
