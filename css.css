@@ -1,44 +1,59 @@
-
-#frase{
-
-    font-size: 70px;
-
+/* layout simples */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-div {
-    display:grid;
-    grid-template-columns:200px 1fr;
-    grid-template-rows:70px 1fr 300px;
-    background-color:rgba(211, 138, 3, 0.616);
+/* cartão */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
 }
 
-header {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    background-color: coral;
+/* área da foto — mantém proporção */
+.card .photo{
+  width: 100%;
+  aspect-ratio: 4 / 3; /* mantém altura proporcional */
+  border-radius: 8px;
+  background-color: #f5f2ee;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-header ul{
-display:flex;
-justify-content:space-evenly;
-list-style-type:none;
-
+/* imagens específicas por classe */
+.card.guitarra .photo {
+  background-image: url('guitarra.jpg');
+}
+.card.violino .photo {
+  background-image: url('violino.jpg');
+}
+.card.piano .photo {
+  background-image: url('piano.jpg');
+}
+.card.bateria .photo {
+  background-image: url('bateria.jpg');
 }
 
-header ul li{
-
-    font-size:30px;
-    color:rgb(248, 248, 248);
-}
-
-a {
- grid-row: 2;
- grid-column: 2 ;   
-
-}
-
-footer {
-     background-color: coral;
-     grid-row: 3;
-     grid-column: 1 / span 2;
+/* texto e botão */
+.card h3 { margin: 0; font-size: 1.05rem; }
+.price { color: #c0392b; font-weight: 700; margin: 0; }
+.card button {
+  margin-top: auto; /* empurra o botão para baixo do cartão */
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  cursor: pointer;
 }
