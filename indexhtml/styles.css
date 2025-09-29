@@ -1,237 +1,100 @@
-/* layout simples */
-.catalogo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-/* cartão */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 12px;
-}
-
-/* área da foto — mantém proporção */
-.card .photo{
-  width: 100%;
-  aspect-ratio: 4 / 3; /* mantém altura proporcional */
-  border-radius: 8px;
-  background-color: #f5f2ee;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* texto e botão */
-.card h3 { 
-    margin: 0; 
-    font-size: 1.05rem; 
-}
-.price { 
-    color: #c0392b; 
-    font-weight: 700; 
-    margin: 0; 
-}
-.card button {
-  margin-top: auto; /* empurra o botão para baixo do cartão */
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #e74c3c;
-  color: white;
-  cursor: pointer;
-}
-
-  :root{
-    --bg:#f8e9dc;
-    --accent:#f32808;
-    --card:#f7d9a8;
-    --muted:#0f0901;
-    --shadow: 0 6px 18px rgba(0,0,0,0.08);
-    --radius:12px;
-  }
-  /*looky*/
-
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    background: linear-gradient(180deg,var(--bg) 0%, #fff6f0 100%);
-    color:var(--muted);
-    -webkit-font-smoothing:antialiased;
-  }
-
-  header{
-    background:var(--accent);
-    color:white;
-    padding:18px 24px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
-  }
-  header h1{
-    margin:0;
-    font-size:20px;
-    letter-spacing:0.4px;
-  }
-
-  main{
-    max-width:1100px;
-    margin:28px auto;
-    padding:0 18px 48px;
-  }
-
-  /* GRID: 4 col desktop, 2 tablet, 1 mobile */
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap:20px;
-  }
-
-  /* responsividade */
-  @media (max-width:1000px){
-    .grid{grid-template-columns: repeat(2, 1fr);}
-  }
-  @media (max-width:600px){
-    .grid{grid-template-columns: 1fr;}
-  }
-
-  .card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
-    border-radius:var(--radius);
-    padding:16px;
-    box-shadow:var(--shadow);
-    min-height:320px;
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    transition:transform .18s ease, box-shadow .18s ease;
-    border:1px solid rgba(0,0,0,0.03);
-  }
-  .card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 14px 30px rgba(0,0,0,0.12);
-  }
-
-  .card .media{
-    height:160px;
-    border-radius:10px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--card);
-    margin-bottom:12px;
-  }
-  .card .media img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain;
-    display:block;
-  }
-
-  .card h3{
-    margin:0 0 6px;
-    font-size:18px;
-    color:#3b2f2a;
-  }
-
-  .card p{
-    margin:0 0 12px;
-    line-height:1.35;
-    color:#4a3f38;
-    font-size:14px;
-    flex-grow:1;
-  }
-
-  .price-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    margin-top:10px;
-  }
-
-  .price{
-    font-weight:700;
-    font-size:18px;
-    color:var(--accent);
-    background:rgba(255,127,107,0.08);
-    padding:8px 12px;
-    border-radius:8px;
-  }
-
-  .btn{
-    background:var(--accent);
-    color:white;
-    border:none;
-    padding:8px 14px;
-    border-radius:8px;
-    cursor:pointer;
-    box-shadow:0 6px 14px rgba(255,127,107,0.18);
-    font-weight:600;
-    transition:opacity .12s ease, transform .12s ease;
-  }
-  .btn:active{transform:translateY(1px)}
-  .btn:hover{opacity:0.95}
-
-  /* rótulos pequenos */
-  .tag{
-    font-size:12px;
-    color:#7a6a59;
-    background:rgba(0,0,0,0.03);
-    padding:6px 8px;
-    border-radius:8px;
-  }
-
-  .grid-principal{
-    display:grid;
-    grid-template-columns: 200px 1fr;
-    gap:20px;
-  }
-
-  /*sidebar*/
-    
-    #sidebar{
-        background-color: rgb(238, 102, 102);
-        margin-top: 30px;
-        margin-bottom: 80px;
-        border-radius: 10px;
+html, body {
+    height: 100%;
+    margin: 0;
     }
 
-    #titulo-sidebar{
-        padding-left: 10px;
-        color: #f5f2ee;
+    /* Cabeçalho */
+    .header {
+      grid-row: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: #fff;
     }
 
-    #lista-sidebar{
-        list-style-type: none;
-     }
-
-    #lista-sidebar li{
-        margin-bottom: 10px;
-        color: #f6f6f5;
+    .menu a, .botao a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
     }
 
-    /*footer*/
-
-    footer{
-        background: #ef4e4e; 
-        color: white; 
-        text-align: center; 
-        padding: 16px; 
-        font-size: 14px;
-        padding-bottom: 30px;
+    .btn {
+      background: #0077ff;
+      padding: 6px 12px;
+      border-radius: 5px;
     }
 
-  
+    /* Área principal */
+    .main-grid { 
+      display: grid;
+      grid-template-rows: 70px 40px 1fr 300px;
+      min-height: 100vh;
+      background-color:rgb(242, 207, 207);
+    }
+
+    #titulo-sobrenos {
+      grid-row: 2;
+      align-items: center;
+      justify-self: center;
+      font-size: 50px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 300px;
+    }
+
+    .conteudo{
+      width: 100%;
+      grid-row: 3;
+      display: flex;
+      justify-content: space-evenly;
+      margin: 80px auto;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+    }
+
+    .foto {
+      display: block;
+      margin: 0 auto 15px auto;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #0077ff;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #0077ff;
+      margin: 0 5px;
+    }
+
+    /* Rodapé */
+    .footer {
+      grid-row: 4;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: #333;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .footer-menu a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
